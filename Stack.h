@@ -1,8 +1,6 @@
 #ifndef STACK
 #define STACK
 
-#include <cmath>
-#include <cstring>
 #include <iostream>
 #include <stdexcept>
 
@@ -25,9 +23,9 @@ public:
 
     ~Stack() { delete[] arr; }
 
-    bool isEmpty() const { return topIndex == -1; }
+    inline bool isEmpty() const { return topIndex == -1; }
 
-    bool isFull() const { return topIndex == capacity - 1; }
+    inline bool isFull() const { return topIndex == capacity - 1; }
 
     void push(Temp x)
     {
@@ -37,13 +35,13 @@ public:
 
     Temp top() const
     {
-        if (topIndex == -1) throw std::out_of_range("Stack is empty");
+        if (isEmpty()) throw std::out_of_range("Stack is empty");
         return arr[topIndex];
     }
 
     void pop()
     {
-        if (topIndex == -1) throw std::out_of_range("Stack is empty");
+        if (isEmpty()) throw std::out_of_range("Stack is empty");
         topIndex--;
     }
 };
