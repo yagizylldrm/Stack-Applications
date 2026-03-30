@@ -3,6 +3,8 @@
 
 #include "Stack.h"
 
+#include <cmath>
+#include <cstring>
 #include <string>
 
 class InfixToPostfix
@@ -29,9 +31,9 @@ public:
 
     std::string getInfix() { return infix; }
 
-    void showInfix() const { std::cout << postfix << std::endl; }
+    void showInfix() const { std::cout << "  Infix: " << infix << std::endl; }
 
-    void showPostfix() const { std::cout << postfix << std::endl; }
+    void showPostfix() const { std::cout << "  Postfix: " << postfix << std::endl; }
 
     /** Application 1: Binary to Decimal Conversion **/
     int convertBinaryToInt(char binString[])
